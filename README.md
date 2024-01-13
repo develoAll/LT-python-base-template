@@ -2,6 +2,11 @@
 
 ## Credenciales
 
+<!-- aca explico como levantar el proyecto -->
+
+
+<!-- con este comando se actualiza los requirements
+pip freeze > requirements.txt -->
 ### Credenciales de desarrollo
 
 ```bash

@@ -1,7 +1,7 @@
 from flask import Flask
 from config import Config
 from flask_sqlalchemy import SQLAlchemy
-
+from flask_cors import CORS
 
 db = SQLAlchemy()
 
@@ -12,12 +12,12 @@ def create_app():
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
     app.config.from_object(Config)
     db.init_app(app)
-
-    from .routes.prueba_routes import api_prueba
-    from .routes.two_routes import api_two
+    CORS(app)
+    # from .routes.prueba_routes import api_prueba
+    # from .routes.two_routes import api_two
+    from .routes import api_student
     from .home import home
 
     app.register_blueprint(home, url_prefix="/")
-    app.register_blueprint(api_prueba, url_prefix="/api/prueba")
-    app.register_blueprint(api_two, url_prefix="/api/two")
+    app.register_blueprint(api_student, url_prefix="/api/student")
     return app
