@@ -15,9 +15,11 @@ def create_app():
     CORS(app)
     # from .routes.prueba_routes import api_prueba
     # from .routes.two_routes import api_two
-    from .routes import api_student
+    from .routes import api_student, api_course, api_career
     from .home import home
 
     app.register_blueprint(home, url_prefix="/")
     app.register_blueprint(api_student, url_prefix="/api/student")
+    app.register_blueprint(api_course, url_prefix="/api/course")
+    app.register_blueprint(api_career, url_prefix="/api/career")
     return app

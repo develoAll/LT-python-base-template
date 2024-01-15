@@ -1,6 +1,5 @@
 from flask import Blueprint, request, jsonify
 from app.controller import student
-# from app.models.student import Student
 
 api_student = Blueprint("student", __name__)
 

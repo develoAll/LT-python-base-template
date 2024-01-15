@@ -54,7 +54,7 @@ def create_student(request):
             db.session.commit()
             return ({
                 "success": True,
-                "message": "Solicitud registrado con exito",
+                "message": "Solicitud de estudiante registrado con exito",
                 "code": "100"
             }, 200)
         else:
