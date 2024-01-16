@@ -19,4 +19,4 @@ def get_all_course():
         last_item = complain_json
     else:
         last_item = complain_json
-    return {"success": True, "code": 200, "data": last_item}
+    return {"status": True, "code": 200, "data": last_item}

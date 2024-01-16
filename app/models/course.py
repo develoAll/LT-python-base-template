@@ -9,5 +9,5 @@ class Course(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(255))
     description = db.Column(db.Text)
-    image = db.Column(db.String(500))
+    image = db.Column(db.Text)
     careers = db.relationship('Career', secondary=career_course_association, backref='course')

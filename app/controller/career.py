@@ -18,11 +18,11 @@ def create_career_detail(request):
         db.session.commit()
         return create_career_courses(new_transaccion.id, body['courses'])
     except Exception as err:
-        return ({
-            "result": False,
-            "status": 500,
+        return {
+            "status": False,
+            "code": 500,
             "error": str(err)
-        }, 500)
+        }
 
 
 def create_career_courses(id, courses):
@@ -36,13 +36,13 @@ def create_career_courses(id, courses):
             db.session.flush()
             db.session.commit()
         return {
-            "success": True,
+            "status": True,
             "message": "Solicitud de Carrera registrado con exito",
             "code": "100"
         }
     except Exception as err:
         return {
-            "success": False,
+            "status": False,
             "code": 500,
             "error": str(err)
         }
@@ -81,7 +81,7 @@ def get_all_carrer_card():
         return {"success": True, "code": 200, "data": last_items}
     except Exception as err:
         return {
-            "success": False,
+            "status": False,
             "code": 500,
             "error": str(err)
         }
@@ -100,7 +100,7 @@ def get_all_id_name_carrer():
         return {"success": True, "code": 200, "data": last_items}
     except Exception as err:
         return {
-            "success": False,
+            "status": False,
             "code": 500,
             "error": str(err)
         }

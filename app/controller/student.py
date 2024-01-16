@@ -30,7 +30,7 @@ def get_all_stundent():
         last_item = complain_json
     else:
         last_item = complain_json
-    return {"success": True, "code": 200, "data": last_item}
+    return {"status": True, "code": 200, "data": last_item}
 
 
 def create_student(request):
@@ -54,19 +54,19 @@ def create_student(request):
             db.session.flush()
             db.session.commit()
             return {
-                "success": True,
+                "status": True,
                 "message": "Solicitud de estudiante registrado con exito",
                 "code": 200
             }
         else:
             return {
-                "success": False,
+                "status": False,
                 "message": "El estudiante ya se encuentra registrado",
                 "code": 200
             }
     except Exception as err:
         return {
-            "success": False,
+            "status": False,
             "code": 500,
             "error": str(err)
         }
@@ -85,18 +85,18 @@ def validStudent(codigo):
 def enroll_career_student(request):
     try:
         body = request
-        data = Student.query.filter(Student.id == body['idStudent'])
-        Student.id_career = body['idCareer']
+        data = Student.query.filter(Student.id == body['idStudent']).first()
+        data.id_career = body['idCareer']
         db.session.add(data)
         db.session.commit()
         return {
-            "success": True,
+            "status": True,
             "message": "Solicitud de matricula se registro con exito",
             "code": 200
         }
     except Exception as err:
         return {
-            "success": False,
+            "status": False,
             "code": 500,
             "error": str(err)
         }
