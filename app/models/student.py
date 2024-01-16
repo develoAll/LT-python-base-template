@@ -19,3 +19,5 @@ class Student(db.Model):
     sex = db.Column(db.String(10))
     mail = db.Column(db.String(300))
     created_at = db.Column(db.DateTime, default=func.now())
+    id_career = db.Column(db.Integer, db.ForeignKey('career.id'))
+    # career = db.relationship('Career', backref='student')

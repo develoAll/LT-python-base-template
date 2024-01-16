@@ -1,15 +1,6 @@
 from app import db
 from app.models.career_course import career_course_association
 
-# career_course_association = db.Table(
-#     'career_course',
-#     db.Column('id', db.Integer, primary_key=True),
-#     db.Column('id_career', db.Integer, db.ForeignKey('career.id', ondelete='CASCADE')),
-#     db.Column('id_course', db.Integer, db.ForeignKey('course.id', ondelete='CASCADE')),
-#     db.Column('state', db.Boolean, nullable=True),
-#     schema='db_unfv'
-# )
-
 
 class Course(db.Model):
     __tablename__ = "course"
