@@ -18,7 +18,8 @@ pip freeze > requirements.txt -->
 
 FLASK_ENV="development"
 
-DATABASE_URI="postgresql://postgres:legacy23@localhost:5432/legacy_technology"
+# DATABASE_URI="postgresql://postgres:legacy23@localhost:5432/legacy_technology"
+DATABASE_URI="postgresql://postgres:Fa6EF6c-Bee42Bd1GcGgcGDbAfeaeDCD@roundhouse.proxy.rlwy.net:58377/railway"
 ```
 
 
@@ -33,5 +34,6 @@ DATABASE_URI="postgresql://postgres:legacy23@localhost:5432/legacy_technology"
 
 FLASK_ENV="development"
 
-DATABASE_URI="postgresql://postgres:legacy23@localhost:5432/legacy_technology"
+# DATABASE_URI="postgresql://postgres:legacy23@localhost:5432/legacy_technology"
+DATABASE_URI="postgresql://postgres:Fa6EF6c-Bee42Bd1GcGgcGDbAfeaeDCD@roundhouse.proxy.rlwy.net:58377/railway"
 ```
